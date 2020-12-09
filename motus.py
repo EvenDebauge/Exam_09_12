@@ -19,10 +19,12 @@ def tourJoueur (motAleatoire):
     for i in range (0,6):
         if motChoisis[i] == motJoueur[i]:
             print(Back.RED +motJoueur[i], end="")
+            print(Style.RESET_ALL)
         else:
             print(Back.BLUE + motJoueur[i], end="")
             print(Style.RESET_ALL)
     return motJoueur
+    
 
 def test_victoire (test):
     if motChoisis == motJoueur :
@@ -33,14 +35,8 @@ def test_victoire (test):
         print("  Il vous reste",tentatives_restantes,".")
     return victoire
     
-def test_defaite (test):
-    if tentatives == 9:
-        defaite=True
-        print("Vous n'avez plus de tentatives, vous avez échoués.")
-    else:
-        defaite=False
         
-bibliotheque_mot=["wapiti","webcam","totoro","atouts","manger","orange","castor","bureau","phyton","chaton"]
+bibliotheque_mot=["wapiti","webcam","totoro","tortue","manger","orange","castor","phasme","python","chaton"]
 choix_mot= random.randint(0,9)
 motChoisis=bibliotheque_mot[choix_mot]
 tentatives=1
@@ -53,7 +49,9 @@ while tentatives<9 and victoire != True:
     print("tentative n°",tentatives,".")
     motJoueur=tourJoueur(motChoisis)
     victoire=test_victoire(motJoueur)
-    defaite=test_defaite(motJoueur)
     tentatives=tentatives+1
     tentatives_restantes=tentatives_restantes-1
+    if tentatives==9:
+        print("Vous avez perdu")
+
 
