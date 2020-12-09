@@ -23,6 +23,11 @@ def tourJoueur (motAleatoire):
         else:
             print(Back.BLUE + motJoueur[i], end="")
             print(Style.RESET_ALL)
+        #je ne comprends pas comment faire en sorte que le jaune s'active si la lettres
+        #se trouve dans le mot en question mais pas au bon endroit..
+        #if motChoisis[i] in  motJoueur[i]:
+           # print(Back.YELLOW +motJoueur[i], end="")
+            #print(Style.RESET_ALL)
     return motJoueur
     
 
